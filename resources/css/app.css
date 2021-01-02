@@ -1,0 +1,93 @@
+/* dmc3844 = rgb(0,136,161) #0088A1 Dark Bright Turquoise
+   dmc946 = rgb(193,75,30)  #C14B1E Med Burnt Orange
+   dmc742 = rgb(243,162,48) #F3A230 tangerine LT
+   dmc355 = rgb(109,27,22) #6D1B16 Terra Cotta DK
+   dmc740 = rgb(219,100,0) #DB6400 Tangerine
+   dmc3766 = rgb(24,101,111) #90BEC1 Peacock Blue LT
+   dmc725 = rgb(238,175,66) #EEAF42 Med Light Topaz
+   dmc920 = rgb(135,49,19 ) #873113 Copper MD
+
+ */
+
+body {
+    font-family: 'Nunito';
+}
+
+p {
+  text-align: center;
+}
+
+.navbar-nav {
+  background-color: grey;
+  width: 100%vw;
+  margin: 0px;
+}
+
+.nav-item {
+  float: right;
+}
+
+.nav-link {
+  justify-content: space-around;
+}
+
+a {
+
+}
+
+.main {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  padding: 20px;
+  background-color: white;
+  border: 2px solid black;
+}
+
+.d-flex {
+  justify-content: center;
+}
+
+.flex-row {
+  width: 100%;
+  padding: 0px;
+  display: flex;
+  /* align-items: center; */
+}
+
+.box {
+  border: 1px solid black;
+  position: relative;
+  margin: 3px;
+}
+
+.box-filler{
+  border: none;
+  position: relative;
+  margin: 3px;
+
+}
+
+#box-horizontal{
+  height: 70px;
+  width: 150px;
+}
+
+#box-vertical {
+  height: 150px;
+  width: 70px;
+}
+
+#box-square{
+  height: 70px;
+  width: 70px;
+}
