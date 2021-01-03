@@ -31,15 +31,12 @@
       <li class="nav-item">
         <a class="nav-link" href="/colorInput">Color Input</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/rectangleLayout">Rectangle Layout</a>
-      </li>
     </ul>
   </div>
 </nav>
 
       <div class="main mt-4 justify-content-center align-text-center">
-      <h2>2021 SAL Square</h2>
+      <h2>2021 SAL Rectangle</h2>
 
       <div class="container">
       <div class="d-flex">
