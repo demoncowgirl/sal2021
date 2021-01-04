@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
   });
 
+  Route::get('/rectangleLayout', function() {
+    return view('rectangleLayout');
+  });
+
 
 Route::get('/colorInput', function() {
   return view('colorInput');

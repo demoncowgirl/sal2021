@@ -92,7 +92,12 @@ a {
   width: 70px;
 }
 
+#box-long {
+  height: 70px;
+  Width: 460px;
+}
+
 .btn {
   margin: 20px;
-  
+
 }
