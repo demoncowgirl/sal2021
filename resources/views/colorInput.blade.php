@@ -18,29 +18,24 @@
     </head>
     <body>
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Beth's Color Randomizer</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/squareLayout">Square Layout</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/rectangleLayout">Rectangle Layout</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+      <nav class="navbar navbar-light navbar-expand-lg">
+        <p class="navbar-brand ml-0">BJS</p>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Square Layout L</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/rectangleLayout">Rectangle Layout L</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
+   <div class="container mt-4">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Floss Color Input</h4>
+          <h2 class="card-title">Floss Color Input</h2>
           <form>
             <label for="dmc">DMC Floss Color:</label><br>
             <input type="text" id="dmc" name="dmc"><br>
@@ -51,7 +46,30 @@
           <a href="http://stitchpalettes.com" class="card-link">Stitch Pallettes Website</a>
         </div>
       </div>
+    </div>
 
+    <div class="container">
 
+      <div class="list">
+        <thead>
+    <tr>
+      <th>DMC Floss</th>
+      <th>Hex Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($colors as $color)
+    <tr class="gradeX">
+      <td>{{ $color->dmc }}</td>
+      <td>{{ $color->hex}}</td>
+      <td class="center"><a href="{{ url('/admin/edit-product/'.$product->id) }}" class="btn
+btn-primary btn-mini">Edit</a> <a id="delCat" href="{{ url('/admin/delete-
+product/'.$product->id) }}" class="btn btn-danger btn-mini">Delete</a></td>
+    </tr>
+    @endforeach
+      </div>
+    </div>
+
+</div>
     </body>
 </html>

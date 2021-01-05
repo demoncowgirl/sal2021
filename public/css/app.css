@@ -11,28 +11,34 @@
 
 body {
     font-family: 'Nunito';
+    background-color: rgb(165, 165, 141, 0.5);
 }
 
 p {
   text-align: center;
 }
 
-.navbar-nav {
-  background-color: grey;
-  width: 100%vw;
-  margin: 0px;
+.navbar {
+  background-color: #a8dadc;
+  padding: 10px;
+  height: 60px;
+  width: 100%;
+  margin: 0;
 }
 
-.nav-item {
+.navbar-brand {
+  float: left;
+  color: white;
+}
+
+.navbar-collapse {
   float: right;
+  margin: auto;
 }
 
-.nav-link {
-  justify-content: space-around;
-}
-
-a {
-
+.nav-item li a{
+  align-self: flex-end;
+  color: #457b9d;
 }
 
 .main {
@@ -100,4 +106,20 @@ a {
 .btn {
   margin: 20px;
 
+}
+
+.card-title h4{
+
+}
+
+.card {
+  margin-top: 40px;
+  padding: 15px;
+  width: 260px;
+  height: auto;
+  background: #fff;
+}
+
+.card-body {
+  align-items: flex-end;
 }

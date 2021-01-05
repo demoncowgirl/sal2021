@@ -18,22 +18,20 @@
     </head>
     <body>
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Beth's Color Randomizer</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
+<nav class="navbar navbar-light navbar-expand-lg">
+  <p class="navbar-brand">BJS</p>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Square Layout <span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item">
         <a class="nav-link" href="/colorInput">Color Input</a>
       </li>
-    </ul>
+      <li class="nav-item">
+        <a class="nav-link" href="/">Square Layout L</a>
+      </li>
+        </ul>
   </div>
 </nav>
+
 
       <div class="main mt-4 justify-content-center align-text-center">
       <h2>2021 SAL Rectangle</h2>
@@ -191,7 +189,7 @@
           </div>
           </div>
 
-        <div class="d-flex flex-row" style="margin-top: -115px">
+        <div class="d-flex flex-row" style="margin-top: -80px">
           <div id="box-square" class="box">
             <p>Box 42</p>
           </div>

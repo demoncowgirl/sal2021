@@ -29,7 +29,7 @@ Route::get('/colorInput', function() {
 
   //Routes for Messages
   Route::resource('/colorInput', 'App\Http\Controllers\ColorController');
-  Route::get('/colors/index', 'App\Http\Controllers\ColorController@index')->name('colors.index');
+  Route::get('/colorInput', 'App\Http\Controllers\ColorController@index')->name('colors.index');
   Route::post('/colors/store', 'App\Http\Controllers\ColorController@store')->name('colors.store');
   Route::get('/colors/{id}/show', 'App\Http\Controllers\ColorController@show')->name('colors.show');
   Route::get('/colors/{id}', 'App\Http\Controllers\ColorsController@destroy');

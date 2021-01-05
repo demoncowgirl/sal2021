@@ -12,7 +12,7 @@ class ColorController extends Controller
           // create a variable and store all of the messages in it
           $colors = Color::orderBy('id', 'desc')->paginate(10);
           // return a view and pass in the variable
-          return view('colors.index', ['colors' => $colors]);
+          return view('colorInput', ['colors' => $colors]);
           }
 
           public function store(Request $request)
