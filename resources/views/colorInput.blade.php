@@ -20,10 +20,10 @@
     </head>
     <body>
 
-      <nav class="navbar navbar-light navbar-expand-lg">
-        <p class="navbar-brand">BJS</p>
+      <nav class="navbar navbar-expand-lg">
+        <h2 class="navbar-brand">Beth's SAL Color Randomizer</h2>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="/">Square Layout</a>
             </li>
@@ -36,9 +36,8 @@
 
    <div class="container">
      <div class="row">
-      <div class="card">
-        <div class="card-body">
-          <h2 class="card-title">Floss Color Input</h2>
+       <div class="col-sm-6 col-md-4 col-lg-2">
+          <h2>Floss Color Input</h2>
           <form>
             <label for="dmc">DMC Floss Color:</label><br>
             <input type="text" id="dmc" name="dmc"><br>
@@ -53,33 +52,35 @@
             <input type="text" id="aida" name="aida" onchange="changeBackground();"><br>
             <input class="button" id="submitColor" value="Submit" type="button" />
           </form>
+          <h3>Helpful Websites</h3>
+          <a href="http://peppermintpurple.com" class="card=link">Pepermint Purple Website</a><br>
           <a href="http://stitchpalettes.com" class="card-link">Stitch Pallettes Website</a><br>
           <a href="http://dmc.crazyartzone.com" class="card-link">Crazy Art Zone Website</a>
-        </div>
-      </div>
     </div>
-    <div class="container">
+    <div class="col-sm-6 offset-sm-6 col-md-4 offset-md-4 col-lg-2 offset-lg-2">
       <div class="table">
         <thead>
-          <tr class="header">
+          <tr>
             <th>DMC Floss</th>
             <th>Hex Color</th>
             <th>Name</th>
           </tr>
-        </thead>
+        </thead><br>
         <tbody>
           @foreach($colors as $color)
-          <tr class="list">
+          <tr>
             <td>{{ $color->dmc }}</td>
             <td>{{ $color->hex}}</td>
             <td>{{ $color->name}}</td>
-            <td class="center">
-              <a id="delColor" href="{{ url('/colorInput'.$color->id) }}" class="btn-sm">Delete</a>
+            <td>
+              <a id="delColor" href="{{ url('/colorInput'.$color->id) }}" class="">Delete</a><br>
             </td>
           </tr>
           @endforeach
+        </tbody>
         </div>
       </div>
     </div>
+  </div>
 </body>
 </html>

@@ -20,25 +20,25 @@
     </head>
     <body>
 
-<nav class="navbar navbar-light navbar-expand-lg">
-  <p class="navbar-brand">BJS</p>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="/colorInput">Color Input</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/">Square Layout</a>
-      </li>
-        </ul>
-  </div>
-</nav>
-
+      <nav class="navbar navbar-expand-lg">
+        <h2 class="navbar-brand">Beth's SAL Color Randomizer</h2>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/colorInput">Color Input</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">Square Layout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
       <div class="main mt-4 justify-content-center align-text-center">
-      <h2>2021 SAL Rectangle</h2>
+      <h2>Peppermint Purple 2021 SAL - Rectangle</h2>
 
       <div class="container bgColor">
+        <div id="rectangleFrame" class="container">
       <div class="d-flex">
         <div class="d-flex flex-row">
           <div id="box-vertical" class="box">
@@ -235,7 +235,7 @@
             <p>Box 51</p>
           </div>
         </div>
-
+</div>
           <button type="button" class="button" onclick="setRandomColor()">Change Colors</button>
         </div>
     </body>

@@ -21,7 +21,7 @@
     <body>
 
       <nav class="navbar navbar-expand-lg">
-        <p class="navbar-brand">BJS</p>
+        <h2 class="navbar-brand">Beth's SAL Color Randomizer</h2>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -35,7 +35,7 @@
       </nav>
 
       <div class="main mt-4 justify-content-center align-text-center">
-      <h2>2021 SAL Square</h2>
+      <h2>Peppermint Purple 2021 SAL - Square</h2>
 
       <div class="container">
       <div class="d-flex">
