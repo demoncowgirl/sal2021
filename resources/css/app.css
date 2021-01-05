@@ -7,10 +7,18 @@
    dmc725 = rgb(238,175,66) #EEAF42 Med Light Topaz
    dmc920 = rgb(135,49,19 ) #873113 Copper MD
 
+Happy Ordinary Day Palette from stitchpalettes.com
+   dmc08 = rgb(106,80,70)  #6A5046 Dark Driftwoood
+   dmc642 = rgb(164,152,120) #A49878 Dark Beige Gray
+   dmc3021 = rgb(79,75,65) #4F4B41 Very Dark Brown
+   dmc3790 = rgb(127,106,85) #7F6A55 Ultra Dark Beige Gray
+   dmc3813 = rgb(178,212,189) #B2D4BD Light Blue Green
+
  */
 
 body {
-    font-family: 'Nunito';
+    font-family: 'Mali', cursive;
+    background-color: rgb(164,152,120);
 }
 
 p {
@@ -18,21 +26,28 @@ p {
 }
 
 .navbar-nav {
-  background-color: grey;
-  width: 100%vw;
-  margin: 0px;
+  background-color: #B2D4BD;
+  /* width: 100vw; */
+  height: 80px;
+  margin: 0;
+  border: 3px solid #7F6A55;
+}
+
+.navbar-brand {
+  float: left;
+  font-style: italic;
+  font-weight: 600;
+  color: #7F6A55;
+  padding-left: 10px;
+  justify-content: space-around;
 }
 
 .nav-item {
-  float: right;
+
 }
 
 .nav-link {
   justify-content: space-around;
-}
-
-a {
-
 }
 
 .main {
@@ -45,9 +60,10 @@ a {
 }
 
 .container {
+  margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
-  width: 75%;
+  width: 50%;
   padding: 20px;
   background-color: white;
   border: 2px solid black;
@@ -62,6 +78,18 @@ a {
   padding: 0px;
   display: flex;
   /* align-items: center; */
+}
+
+.card {
+  width: 320px;
+}
+
+.table {
+  width: 260px;
+}
+
+th {
+  justify-content: space-around;
 }
 
 .box {
@@ -92,7 +120,15 @@ a {
   width: 70px;
 }
 
-.btn {
+#box-long {
+  height: 70px;
+  width: 460px;
+}
+
+.button{
+  background-color: #B2D4BD;
+  height: 40px;
+  width: 100px;
   margin: 20px;
-  
+  border: 2px solid #7F6A55;
 }

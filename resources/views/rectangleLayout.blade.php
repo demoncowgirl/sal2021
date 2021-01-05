@@ -8,6 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
         <!-- Styles -->
         <link href="/css/app.css" rel="stylesheet">
@@ -26,7 +28,7 @@
         <a class="nav-link" href="/colorInput">Color Input</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/">Square Layout L</a>
+        <a class="nav-link" href="/">Square Layout</a>
       </li>
         </ul>
   </div>
@@ -36,7 +38,7 @@
       <div class="main mt-4 justify-content-center align-text-center">
       <h2>2021 SAL Rectangle</h2>
 
-      <div class="container">
+      <div class="container bgColor">
       <div class="d-flex">
         <div class="d-flex flex-row">
           <div id="box-vertical" class="box">
@@ -234,7 +236,7 @@
           </div>
         </div>
 
-          <button type="button" class="btn btn-secondary" onclick="setRandomColor()">Change Colors</button>
+          <button type="button" class="button" onclick="setRandomColor()">Change Colors</button>
         </div>
     </body>
 </html>

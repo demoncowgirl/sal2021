@@ -25,13 +25,13 @@ class ColorController extends Controller
               $colors = [
                 'dmc.required' => 'This field cannot be empty!',
                 'hex.required' => 'This field is required.'
-
               ]);
 
             // store in database
             $color = new Color();
             $color -> dmc = $request -> input('dmc');
             $color -> hex = $request -> input('hex');
+            $color -> name = $request -> input('name') -> nullable();
             $color -> created_at = Carbon::now();
 
             $color -> save();
