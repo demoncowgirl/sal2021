@@ -94,6 +94,10 @@ h1, h2, h3, h4 {
   display: flex;
 }
 
+input {
+  padding: 5px;
+}
+
 .table {
   width: 540px;
   padding: 10px;

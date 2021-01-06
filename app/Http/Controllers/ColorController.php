@@ -10,7 +10,7 @@ class ColorController extends Controller
 
       public function index(){
           // create a variable and store all of the messages in it
-          $colors = Color::orderBy('id', 'desc')->paginate(10);
+          $colors = Color::orderBy('id')->paginate(10);
           // return a view and pass in the variable
           return view('colorInput', ['colors' => $colors]);
           }
@@ -31,10 +31,14 @@ class ColorController extends Controller
             $color = new Color();
             $color -> dmc = $request -> input('dmc');
             $color -> hex = $request -> input('hex');
-            $color -> name = $request -> input('name') -> nullable();
-            $color -> created_at = Carbon::now();
+            $color -> name = $request -> input('name');
+            // $color -> created_at = Carbon::now();
 
             $color -> save();
+
+            $request->session()->flash('status', 'Color added successfully!');
+
+            return redirect('colorInput');
 
         }
 
@@ -49,7 +53,7 @@ class ColorController extends Controller
 
           Session::flash('success', 'This color has been successfully deleted!');
           // redirect to another
-          return redirect()->route('colorInput');
+          return redirect ('colorInput');
         }
 
 

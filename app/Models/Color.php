@@ -9,11 +9,12 @@ class Color extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-          'dmc', 'hex'
-      ];
+    protected $table = 'colors';
 
-      protected $table = 'colors';
+
+    protected $fillable = [
+          'dmc', 'hex', 'name'
+      ];
 
 
     public function colors()

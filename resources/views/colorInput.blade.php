@@ -38,13 +38,14 @@
      <div class="row">
        <div class="col-sm-6 col-md-4 col-lg-2">
           <h2>Floss Color Input</h2>
-          <form>
+           <form method="POST" action="{{ action('App\Http\Controllers\ColorController@store') }}" enctype="multipart/form-data">
+                {{ csrf_field() }}
             <label for="dmc">DMC Floss Color:</label><br>
-            <input type="text" id="dmc" name="dmc"><br>
+            <input type="text" id="dmc" name="dmc" placeholder="Required"><br>
             <label for="hex">Hex Color:</label><br>
-            <input type="text" id="hex" name="hex"><br>
+            <input type="text" id="hex" name="hex" placeholder="Include #"><br>
             <label for="name">Color Name:</label><br>
-            <input type="text" id="name" name="name"><br>
+            <input type="text" id="name" name="name" placeholder="Optional"><br>
             <input class="button" type="submit" value="Submit">
           </form>
           <form>
@@ -53,9 +54,9 @@
             <input class="button" id="submitColor" value="Submit" type="button" />
           </form>
           <h3>Helpful Websites</h3>
-          <a href="http://peppermintpurple.com" class="card=link">Pepermint Purple Website</a><br>
-          <a href="http://stitchpalettes.com" class="card-link">Stitch Pallettes Website</a><br>
-          <a href="http://dmc.crazyartzone.com" class="card-link">Crazy Art Zone Website</a>
+          <a href="http://peppermintpurple.com" target="_blank" rel="noopener noreferrer">Peppermint Purple Website</a><br>
+          <a href="http://stitchpalettes.com" target="_blank" rel="noopener noreferrer">Stitch Pallettes Website</a><br>
+          <a href="http://dmc.crazyartzone.com" target="_blank" rel="noopener noreferrer">Crazy Art Zone Website</a>
     </div>
     <div class="col-sm-6 offset-sm-6 col-md-4 offset-md-4 col-lg-2 offset-lg-2">
       <div class="table">
@@ -73,7 +74,7 @@
             <td>{{ $color->hex}}</td>
             <td>{{ $color->name}}</td>
             <td>
-              <a id="delColor" href="{{ url('/colorInput'.$color->id) }}" class="">Delete</a><br>
+              <a method="GET" action="{{ action('App\Http\Controllers\ColorController@destroy') }}" href="{{ route('colors.destroy'. $color -> id) }}" class="">Delete</a><br>
             </td>
           </tr>
           @endforeach
