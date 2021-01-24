@@ -1,19 +1,29 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Color;
+use Illuminate\Support\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Collective\Html\Eloquent;
+use App\Models\Color;
 
 class ColorController extends Controller
 {
 
-
       public function index(){
           // create a variable and store all of the messages in it
-          $colors = Color::orderBy('id')->paginate(10);
+          $colors = Color::orderBy('id', 'desc')->paginate(10);
           // return a view and pass in the variable
           return view('colorInput', ['colors' => $colors]);
           }
+
+    //   public function getColors(){
+    //     foreach ($data_main as $transaction_main) {
+    //       $json_decoded = json_decode($transaction_main);
+    //       $colorArray[] = array('Amount' => $amount, 'CodeType' => $json_decoded->data->Type->data->codeType, 'Name' => $json_decoded->data->Name, 'SiteName' => $json_decoded->data->SiteName);
+    // }
+    //
+          // return $this->belongsToOne('App\Color','hex','dmc','name');
+          // }
 
           public function store(Request $request)
         {
@@ -32,7 +42,6 @@ class ColorController extends Controller
             $color -> dmc = $request -> input('dmc');
             $color -> hex = $request -> input('hex');
             $color -> name = $request -> input('name');
-            // $color -> created_at = Carbon::now();
 
             $color -> save();
 

@@ -19343,14 +19343,9 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-function changeBackground() {
-  var color = document.getElementById("color").value; // cached
-  // The working function for changing background color.
-
-  document.bgColor = color;
-}
-
-document.getElementById("submitColor").addEventListener("click", changeBackground, false);
+get_random = function get_random(colors) {
+  return list[Math.floor(Math.random() * colors.length)];
+}; // document.getElementById("get_random").addEventListener("click", changeBackground, false);
 
 /***/ }),
 

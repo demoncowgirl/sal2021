@@ -1,11 +1,7 @@
 require('./bootstrap');
 
-function changeBackground() {
-    var color = document.getElementById("color").value; // cached
-
-    // The working function for changing background color.
-    document.bgColor = color;
-
+get_random = function (colors) {
+  return list[Math.floor((Math.random()*colors.length))];
 }
 
-document.getElementById("submitColor").addEventListener("click", changeBackground, false);
+// document.getElementById("get_random").addEventListener("click", changeBackground, false);

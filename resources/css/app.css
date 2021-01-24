@@ -22,10 +22,17 @@ body {
 }
 
 p {
+  font-family: 'Nunito';
+  font-size: 12px;
+  margin: 0px;
   text-align: center;
 }
 
-h1, h2, h3, h4 {
+h4{
+    margin: 0px;
+}
+
+h1, h2, h3 {
   margin-bottom: 5px;
   font-weight: 600;
 }
@@ -98,20 +105,34 @@ input {
   padding: 5px;
 }
 
-.table {
-  width: 540px;
+th {
+  font-weight: bold;
+}
+
+td {
   padding: 10px;
 }
 
-.table thead {
+.table .table-bordered{
+  width: 540px;
+  padding: 20px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+/* .table .table-bordered thead th {
   font-weight: 600;
 }
 
-.table table td th {
-  padding: 5px;
+.table .table-bordered  thead td th {
+  padding: 20px;
 }
 
-.table td{
+.table .table-bordered th {
+  font-weight: 800;
+} */
+
+.table .table-bordered td{
   white-space: nowrap;
   overflow: hidden;
   float: left;
@@ -120,7 +141,7 @@ input {
 .box {
   border: 1px solid black;
   position: relative;
-  margin: 3px;
+  margin: 3px
 }
 
 .box-filler{

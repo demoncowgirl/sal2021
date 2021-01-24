@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ColorController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +16,12 @@ use App\Http\Controllers\ColorController;
 */
 
 Route::get('/', function () {
+  $colors = DB::table('colors')
+    ->get();
+    return view('welcome', ['colors'=> $colors]);
+  });
+
+  Route::get('/welcome', function() {
     return view('welcome');
   });
 
@@ -22,23 +29,31 @@ Route::get('/', function () {
     return view('rectangleLayout');
   });
 
-
-Route::get('/colorInput', function() {
-  return view('colorInput');
-});
-
-  //Routes for Messages
-  Route::resource('/colorInput', 'App\Http\Controllers\ColorController');
-  Route::get('/colorInput', 'App\Http\Controllers\ColorController@index');
-  Route::post('/colors/store', 'App\Http\Controllers\ColorController@store');
-  // Route::get('/colors/{id}/show', 'App\Http\Controllers\ColorController@show');
-  Route::get('/colors/{id}', 'App\Http\Controllers\ColorsController@destroy')-> name('colors.destroy');
-
-
-  Route::get('colors', function(){
+  Route::get('/colorInput', function() {
     $colors = DB::table('colors')
-          ->orderBy('created_at', 'desc')
-          ->limit(40)
-          ->get();
-    return view('colors.index', ['colors'=> $colors]);
+      ->get();
+  return view('colorInput', ['colors'=> $colors]);
   });
+
+
+  //Routes for Colors
+  Route::resources([
+    'colors' => ColorController::class,
+  ]);
+  Route::get('/colors/index', [ColorController::class, 'index']);
+  Route::post('/colors/store', [ColorController::class, 'store']);
+  Route::get('/colors/{id}/getColors', [ColorController::class, 'getColors']);
+  // Route::get('/colors/{id}/destroy', [ColorController::class, 'destroy']);
+  Route::get('/colors/{id}', function ($id) {
+    $colors = DB::table('colors')
+      ->get();
+})->name('colors.destroy');
+
+
+
+  // Route::get('color', function(){
+  //   $colors = DB::table('colors')
+  //         ->random()
+  //         ->get();
+  //   return view('/colors', ['colors'=> $colors]);
+  // });

@@ -38,16 +38,20 @@
       <h2>Peppermint Purple 2021 SAL - Square</h2>
 
       <div class="container">
+      @foreach($colors as $color)
       <div class="d-flex">
         <div class="d-flex flex-row">
-          <div id="box-horizontal" class="box" style="background: #0088A1;">
-            <p>Box 1</p>
+          <div id="box-horizontal" class="box" style="background: <?php{{$color->hex}}?>">
+            <h4>Box 1</h4>
+            <p>{{$color -> dmc}}</p>
+            <p>{{$color -> name}}</p>
           </div>
         </div>
-
         <div class="d-flex flex-row">
-          <div id="box-square" class="box">
-            <p>Box 5</p>
+          <div id="box-square" class="box" style="background: <?php{{$color->hex}}?>">
+            <h4>Box 5</h4>
+            <p>{{$color -> dmc}}</p>
+            <p>{{$color -> name}}</p>
           </div>
           <div id="box-square" class="box">
             <p>Box 4</p>
@@ -226,7 +230,6 @@
             <p>Box 44</p>
           </div>
         </div>
-
         <div class="d-flex flex-row">
           <div id="box-horizontal" class="box" style="background: #DB6400;">
             <p>Box 52</p>
@@ -234,6 +237,7 @@
           </div>
           <button type="button" class="button" onclick="setRandomColor()">Change Colors</button>
         </div>
+        @endforeach
         </div>
       </div>
     </body>

@@ -59,7 +59,7 @@
           <a href="http://dmc.crazyartzone.com" target="_blank" rel="noopener noreferrer">Crazy Art Zone Website</a>
     </div>
     <div class="col-sm-6 offset-sm-6 col-md-4 offset-md-4 col-lg-2 offset-lg-2">
-      <div class="table">
+      <div class="table table-bordered">
         <thead>
           <tr>
             <th>DMC Floss</th>
@@ -74,13 +74,14 @@
             <td>{{ $color->hex}}</td>
             <td>{{ $color->name}}</td>
             <td>
-              <a method="GET" action="{{ action('App\Http\Controllers\ColorController@destroy') }}" href="{{ route('colors.destroy'. $color -> id) }}" class="">Delete</a><br>
+              <button type="button" class="btn btn-info">
+              </button><br>
             </td>
           </tr>
           @endforeach
         </tbody>
         </div>
-      </div>
+      </div>s
     </div>
   </div>
 </body>
