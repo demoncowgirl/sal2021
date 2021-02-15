@@ -19343,7 +19343,9 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-get_random = function get_random(colors) {
+var myModal = new bootstrap.Modal(document.getElementById('myModal'), options);
+
+var colors = get_random = function get_random(colors) {
   return list[Math.floor(Math.random() * colors.length)];
 }; // document.getElementById("get_random").addEventListener("click", changeBackground, false);
 

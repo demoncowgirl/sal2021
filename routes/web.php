@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ColorController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -15,14 +16,30 @@ use App\Http\Controllers\ColorController;
 |
 */
 
+
+// Registration routes
+Route::get('auth/register', function() {
+    return view('auth/register');
+});
+
+Route::resources([
+  'users' => UserController::class,
+]);
+
+Route::post('/user/store', [UserController::class, 'store']);
+
+
+// Login routes
+Route::get('/auth/login', function() {
+  return view('auth/login');
+});
+
+
+// Color routes
 Route::get('/', function () {
   $colors = DB::table('colors')
     ->get();
-    return view('welcome', ['colors'=> $colors]);
-  });
-
-  Route::get('/welcome', function() {
-    return view('welcome');
+    return view('/welcome', ['colors'=>$colors]);
   });
 
   Route::get('/rectangleLayout', function() {
@@ -44,16 +61,4 @@ Route::get('/', function () {
   Route::post('/colors/store', [ColorController::class, 'store']);
   Route::get('/colors/{id}/getColors', [ColorController::class, 'getColors']);
   // Route::get('/colors/{id}/destroy', [ColorController::class, 'destroy']);
-  Route::get('/colors/{id}', function ($id) {
-    $colors = DB::table('colors')
-      ->get();
-})->name('colors.destroy');
-
-
-
-  // Route::get('color', function(){
-  //   $colors = DB::table('colors')
-  //         ->random()
-  //         ->get();
-  //   return view('/colors', ['colors'=> $colors]);
-  // });
+  Route::get('/colors/delete/{id}', [ColorController::class, 'destroy'])->name('colors.destroy');

@@ -6,27 +6,20 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateColorsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('colors', function (Blueprint $table) {
             $table->increments('id');
             $table->string('hex');
             $table->string('dmc');
+            $table->string('name');
             $table->timestamps();
 
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('colors');

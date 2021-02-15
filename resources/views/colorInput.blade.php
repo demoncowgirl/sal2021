@@ -48,16 +48,12 @@
             <input type="text" id="name" name="name" placeholder="Optional"><br>
             <input class="button" type="submit" value="Submit">
           </form>
-          <form>
+          <!-- <form>
             <label for="aida">Aida Color:</label><br>
             <input type="text" id="aida" name="aida" onchange="changeBackground();"><br>
             <input class="button" id="submitColor" value="Submit" type="button" />
-          </form>
-          <h3>Helpful Websites</h3>
-          <a href="http://peppermintpurple.com" target="_blank" rel="noopener noreferrer">Peppermint Purple Website</a><br>
-          <a href="http://stitchpalettes.com" target="_blank" rel="noopener noreferrer">Stitch Pallettes Website</a><br>
-          <a href="http://dmc.crazyartzone.com" target="_blank" rel="noopener noreferrer">Crazy Art Zone Website</a>
-    </div>
+          </form> -->
+        </div>
     <div class="col-sm-6 offset-sm-6 col-md-4 offset-md-4 col-lg-2 offset-lg-2">
       <div class="table table-bordered">
         <thead>
@@ -74,15 +70,21 @@
             <td>{{ $color->hex}}</td>
             <td>{{ $color->name}}</td>
             <td>
-              <button type="button" class="btn btn-info">
+              <button type="button" class="btn btn-info">Delete
+                <a href="{{ route('colors.destroy', ['id' => $color -> id]) }}"></a>
               </button><br>
             </td>
           </tr>
           @endforeach
         </tbody>
         </div>
-      </div>s
+      </div>
     </div>
+    <h3>Helpful Websites</h3>
+    <a href="http://peppermintpurple.com" target="_blank" rel="noopener noreferrer">Peppermint Purple Website</a><br>
+    <a href="http://stitchpalettes.com" target="_blank" rel="noopener noreferrer">Stitch Pallettes Website</a><br>
+    <a href="http://dmc.crazyartzone.com" target="_blank" rel="noopener noreferrer">Crazy Art Zone Website</a>
+  </div>
   </div>
 </body>
 </html>

@@ -9,32 +9,35 @@ use App\Models\Color;
 class ColorController extends Controller
 {
 
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
+
       public function index(){
           // create a variable and store all of the messages in it
           $colors = Color::orderBy('id', 'desc')->paginate(10);
+          //
+          // var_dump($colors);
+          // die();
+
           // return a view and pass in the variable
           return view('colorInput', ['colors' => $colors]);
           }
 
-    //   public function getColors(){
-    //     foreach ($data_main as $transaction_main) {
-    //       $json_decoded = json_decode($transaction_main);
-    //       $colorArray[] = array('Amount' => $amount, 'CodeType' => $json_decoded->data->Type->data->codeType, 'Name' => $json_decoded->data->Name, 'SiteName' => $json_decoded->data->SiteName);
-    // }
-    //
-          // return $this->belongsToOne('App\Color','hex','dmc','name');
-          // }
-
           public function store(Request $request)
         {
-            // validate the data
-          $validatedData = $request ->validate([
-              'dmc' => 'required|max:5',
-              'hex' => 'required|min:7'
+          // validate the data
+          $this->validate($request, [
+              'dmc' => 'required|max:5|unique:colors',
+              'hex' => 'required|min:7|unique:colors'
             ],
               $colors = [
                 'dmc.required' => 'This field cannot be empty!',
-                'hex.required' => 'This field is required.'
+                'hex.required' => 'This field is required.',
+                'dmc.unique' => 'You have already entered this color.',
+                'hex.unique' => 'You have already entered this color.'
+
               ]);
 
             // store in database
@@ -60,7 +63,7 @@ class ColorController extends Controller
           $color = Color::findOrFail($id);
           $color -> delete();
 
-          Session::flash('success', 'This color has been successfully deleted!');
+          $request->session()->flash('success', 'This color has been successfully deleted!');
           // redirect to another
           return redirect ('colorInput');
         }

@@ -7,11 +7,7 @@ use Illuminate\Database\Seeder;
 
 class ColorSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+
     public function run()
     {
       DB::table('colors')->insert([
@@ -56,11 +52,31 @@ class ColorSeeder extends Seeder
           'name' => 'Med Light Topaz',
       ]);
 
+      // DB::table('colors')->insert([
+      //     'dmc' => '920',
+      //     'hex' => '#873113',
+      //     'name' => 'Med Copper',
+      // ]);
+
       DB::table('colors')->insert([
-          'dmc' => '920',
-          'hex' => '#873113',
-          'name' => 'Med Copper',
+          'dmc' => '3849',
+          'hex' => '#52B3AE',
+          'name' => 'Teal Green Light',
       ]);
+
+      DB::table('colors')->insert([
+          'dmc' => '3766',
+          'hex' => '#99CFD9',
+          'name' => 'Peacock Blue Light',
+      ]);
+
+      DB::table('colors')->insert([
+          'dmc' => '813',
+          'hex' => '#A1C2D7',
+          'name' => 'Blue Light',
+      ]);
+
+
 
     }
 }

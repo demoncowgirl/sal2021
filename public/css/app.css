@@ -37,6 +37,69 @@ h1, h2, h3 {
   font-weight: 600;
 }
 
+	.modal {
+		width: 320px;
+		margin: 30px auto;
+	}
+	.modal .modal-content {
+		border-radius: 1px;
+		border: none;
+	}
+	.modal .modal-header {
+    position: relative;
+    margin-top: 40px;
+		justify-content: center;
+    background: #f2f2f2;
+	}
+    .modal .modal-body {
+        padding: 30px;
+    }
+    .modal .modal-footer {
+        background: #f2f2f2;
+    }
+	.modal h4 {
+		text-align: center;
+		font-size: 26px;
+	}
+    .modal label {
+        font-weight: normal;
+        font-size: 13px;
+    }
+	.modal .form-control, .modal-login .btn {
+		min-height: 38px;
+		border-radius: 2px;
+	}
+	.modal .hint-text {
+		text-align: center;
+	}
+	.modal .close {
+        position: absolute;
+		top: 15px;
+		right: 15px;
+	}
+    .modal .checkbox-inline {
+        margin-top: 12px;
+    }
+    .modal-login input[type="checkbox"]{
+        margin-top: 2px;
+    }
+	.modal .btn {
+        min-width: 100px;
+		background: #3498db;
+		border: none;
+		line-height: normal;
+	}
+	.modal .btn:hover, .modal-login .btn:focus {
+		background: #248bd0;
+	}
+	.modal-login .hint-text a {
+		color: #999;
+	}
+	.trigger-btn {
+		display: inline-block;
+		margin: 100px auto;
+	}
+
 .navbar {
   width: 100%;
   height: 80px;
