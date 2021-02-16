@@ -9,22 +9,11 @@ use App\Models\Color;
 class ColorController extends Controller
 {
 
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
-
       public function index(){
-          // create a variable and store all of the messages in it
           $colors = Color::orderBy('id', 'desc')->paginate(10);
-          //
-          // var_dump($colors);
-          // die();
-
-          // return a view and pass in the variable
           return view('colorInput', ['colors' => $colors]);
           }
-
+          
           public function store(Request $request)
         {
           // validate the data

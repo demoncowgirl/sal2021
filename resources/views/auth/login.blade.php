@@ -17,7 +17,7 @@
 <div id="myModal" class="modal fade">
 	<div class="modal-dialog modal-login">
 		<div class="modal-content">
-			<form action="{{route('/')}}" method="post">
+			<form action="{{ route('welcome') }}" method="post">
 				@csrf
 				<div class="modal-header">
 					<h4 class="modal-title">Login</h4>

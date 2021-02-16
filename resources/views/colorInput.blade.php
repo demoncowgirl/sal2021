@@ -25,7 +25,10 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="/">Square Layout</a>
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/squareLayout">Square Layout</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/rectangleLayout">Rectangle Layout</a>

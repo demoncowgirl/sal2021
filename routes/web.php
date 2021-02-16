@@ -17,6 +17,9 @@ use App\Http\Controllers\LoginController;
 |
 */
 
+Route::get('/', function() {
+  return view('welcome');
+});
 
 // Registration routes
 Route::get('auth/register', function() {
@@ -36,14 +39,20 @@ Route::get('/auth/login', function() {
 });
 
 // Color routes
-Route::get('/', function () {
+Route::get('/squareLayout', function () {
   $colors = DB::table('colors')
+    ->load(['hex', 'dmc', 'name'])
+    ->orderBy(random_int)
     ->get();
-    return view('/welcome', ['colors'=>$colors]);
+    return view('squareLayout', ['colors'=>$colors]);
   });
 
   Route::get('/rectangleLayout', function() {
-    return view('rectangleLayout');
+    $colors = DB::table('colors')
+    ->load(['hex', 'dmc', 'name'])
+    ->orderBy(random_int)
+      ->get();
+      return view('/rectangleLayout', ['colors'=>$colors]);
   });
 
   Route::get('/colorInput', function() {
@@ -60,5 +69,4 @@ Route::get('/', function () {
   Route::get('/colors/index', [ColorController::class, 'index']);
   Route::post('/colors/store', [ColorController::class, 'store']);
   Route::get('/colors/{id}/getColors', [ColorController::class, 'getColors']);
-  // Route::get('/colors/{id}/destroy', [ColorController::class, 'destroy']);
   Route::get('/colors/delete/{id}', [ColorController::class, 'destroy'])->name('colors.destroy');
