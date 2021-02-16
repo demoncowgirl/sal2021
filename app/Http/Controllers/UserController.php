@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Session;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Database\Eloquent\Model;

@@ -39,6 +39,8 @@
         </div>
       </nav>
 
+      @include('flash-message')
+
       <div class="main mt-4 justify-content-center align-text-center">
       <h2>Peppermint Purple 2021 SAL - Square</h2>
 

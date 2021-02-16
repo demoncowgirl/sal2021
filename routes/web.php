@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
 
 
 /*
@@ -33,7 +34,6 @@ Route::post('/user/store', [UserController::class, 'store']);
 Route::get('/auth/login', function() {
   return view('auth/login');
 });
-
 
 // Color routes
 Route::get('/', function () {

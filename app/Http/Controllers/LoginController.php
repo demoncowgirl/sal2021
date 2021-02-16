@@ -1,16 +1,16 @@
 <?php
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Session;
 
-protected function credentials(Request $request)
+function credentials(Request $request)
 {
 
-    /// this method is overriden form Illuminate\Foundation\Auth\AuthenticatesUsers; class
-    $field = filter_var($request->get($this->username()), FILTER_VALIDATE_EMAIL)
-        ? $this->username()
-        : 'username';
+    // Retrieve the currently authenticated user...
+    $user = Auth::user();
 
-    return [
-        $field => $request->get($this->username()),
-        'password' => $request->password,
-    ];
+    if (Auth::check()) {
+     return redirect ('welcome')-> flash('status', 'You have been loggedin successfully!');
+;
+    }
 }

@@ -20,7 +20,7 @@
 <div id="myModal" class="modal fade">
 	<div class="modal-dialog modal-login">
 		<div class="modal-content">
-			<form action="/user/store"  method="post">
+			<form action="{{route('auth/login')}}"  method="post">
              {{ csrf_field() }}
 				<div class="modal-header">
 					<h4 class="modal-title">Register</h4>
@@ -31,14 +31,29 @@
             <div class="form-group">
               <label for="name">User Name</label>
               <input type="name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter username">
+								@if ($errors->has('name'))
+									<span class="invalid-feedback" role="alert">
+										<strong>{{ $errors->first('name') }}</strong>
+									</span>
+								@endif
             </div>
             <label for="email">Email address</label>
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+							@if ($errors->has('email'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('email') }}</strong>
+                </span>
+              @endif
           </div>
           <div class="form-group">
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" placeholder="Password">
+              @if ($errors->has('password'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
+              @endif
           </div>
           <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">

@@ -17,23 +17,33 @@
 <div id="myModal" class="modal fade">
 	<div class="modal-dialog modal-login">
 		<div class="modal-content">
-			<form action="/user/index" method="post">
+			<form action="{{route('/')}}" method="post">
+				@csrf
 				<div class="modal-header">
 					<h4 class="modal-title">Login</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">
 					<div class="form-group">
-						<label>Username</label>
+						<label>Email</label>
 						<input type="text" class="form-control" required="required">
+              @if ($errors->has('email'))
+                <span role="alert">
+                    <strong>{{ $errors->first('email') }}</strong>
+                </span>
+              @endif
 					</div>
 					<div class="form-group">
 						<div class="clearfix">
 							<label>Password</label>
 							<a href="#" class="pull-right text-muted"><small>Forgot?</small></a>
 						</div>
-
 						<input type="password" class="form-control" required="required">
+						@if ($errors->has('password'))
+							<span class="invalid-feedback" role="alert">
+								<strong>{{ $errors->first('password') }}</strong>
+							</span>
+						@endif
 					</div>
 				</div>
 				<div class="modal-footer">
