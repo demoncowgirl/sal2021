@@ -52,11 +52,11 @@ class ColorSeeder extends Seeder
           'name' => 'Med Light Topaz',
       ]);
 
-      // DB::table('colors')->insert([
-      //     'dmc' => '920',
-      //     'hex' => '#873113',
-      //     'name' => 'Med Copper',
-      // ]);
+      DB::table('colors')->insert([
+          'dmc' => '920',
+          'hex' => '#873113',
+          'name' => 'Med Copper',
+      ]);
 
       DB::table('colors')->insert([
           'dmc' => '3849',
@@ -75,7 +75,6 @@ class ColorSeeder extends Seeder
           'hex' => '#A1C2D7',
           'name' => 'Blue Light',
       ]);
-
 
 
     }

@@ -13,7 +13,7 @@ class ColorController extends Controller
           $colors = Color::orderBy('id', 'desc')->paginate(10);
           return view('colorInput', ['colors' => $colors]);
           }
-          
+
           public function store(Request $request)
         {
           // validate the data
@@ -35,12 +35,27 @@ class ColorController extends Controller
             $color -> hex = $request -> input('hex');
             $color -> name = $request -> input('name');
 
+            // $colorArray = json_decode($color);
+
             $color -> save();
+
 
             $request->session()->flash('status', 'Color added successfully!');
 
             return redirect('colorInput');
 
+        }
+
+        public function getColors($colors) {
+
+          $colorArray=[];
+
+          for ($x = 0; $x <= 51; $x++) {
+            // array_push($colorArray, $colors);
+            $colorArray += $colors[i];
+          }
+
+          return $colorArray;
         }
 
         public function show($id){

@@ -40,19 +40,15 @@ Route::get('/auth/login', function() {
 
 // Color routes
 Route::get('/squareLayout', function () {
-  $colors = DB::table('colors')
-    ->load(['hex', 'dmc', 'name'])
-    ->orderBy(random_int)
-    ->get();
-    return view('squareLayout', ['colors'=>$colors]);
+      $colors = DB::table('colors')
+      ->get();
+    return view('squareLayout', ['colors'=> $colors]);
   });
 
   Route::get('/rectangleLayout', function() {
-    $colors = DB::table('colors')
-    ->load(['hex', 'dmc', 'name'])
-    ->orderBy(random_int)
-      ->get();
-      return view('/rectangleLayout', ['colors'=>$colors]);
+        $colors = DB::table('colors')
+        ->get();
+      return view('rectangleLayout', ['colors'=> $colors]);
   });
 
   Route::get('/colorInput', function() {
@@ -66,7 +62,8 @@ Route::get('/squareLayout', function () {
   Route::resources([
     'colors' => ColorController::class,
   ]);
-  Route::get('/colors/index', [ColorController::class, 'index']);
-  Route::post('/colors/store', [ColorController::class, 'store']);
-  Route::get('/colors/{id}/getColors', [ColorController::class, 'getColors']);
-  Route::get('/colors/delete/{id}', [ColorController::class, 'destroy'])->name('colors.destroy');
+
+  Route::get('/colors/index', [ColorController::class, 'index'])-> name('colors.index');
+  Route::post('/colors/store', [ColorController::class, 'store'])-> name('colors.store');
+  Route::get('/colors/getColors', [ColorController::class, 'getColors'])-> name('colors.getColors');
+  Route::get('/colors/delete/{id}', [ColorController::class, 'destroy'])-> name('colors.destroy');
